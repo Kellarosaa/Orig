@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operations</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>simple problem solver</h2>
+    <input type="text" id="result" disabled>
+    <br>
+    <button onclick="calculate('+')">Addition (+)</button>
+    <button onclick="calculate('-')">Subtraction (-)</button>
+    <button onclick="calculate('*')">Multiplication (*)</button>
+    <button onclick="calculate('/')">Division (/)</button>
+    <button onclick="calculate('**')">Exponentiation (**)</button>
+
+    <script>
+        function calculate(operator) {
+            let num1 = parseFloat(prompt("Enter first number:"));
+            let num2 = parseFloat(prompt("Enter second number:"));
+            let result;
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                case '**':
+                    result = Math.pow(num1, num2);
+                    break;
+                default:
+                    result = "Invalid operator";
+            }
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>
